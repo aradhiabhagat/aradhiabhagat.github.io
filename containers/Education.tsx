@@ -1,50 +1,38 @@
 import React from "react";
-import EducationCard from "../components/EducationCard";
 import { educationInfo } from "../portfolio";
 import { Container, Row, Col } from "reactstrap";
-import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
 
 const Education = () => {
   return (
-    educationInfo && (
-      <Fade bottom duration={2000}>
-        <section className="section pb-0 bg-gradient-info my-5">
-          <Container>
-            <div className="d-flex px-3">
-              <div>
-                <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
-                  <i className="ni ni-books text-info" />
-                </div>
-              </div>
-              <div className="pl-4">
-                <h4 className="display-3 text-white">Education</h4>
-              </div>
-            </div>
-            <Row className="row-grid align-items-center">
-              {educationInfo.map(info => {
-                return (
-                  <Col className="order-lg-1" lg="6" key={info.schoolName}>
-                    <EducationCard {...info} />
-                  </Col>
-                );
-              })}
-            </Row>
-          </Container>
-          <div className="separator separator-bottom separator-skew zindex-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
+    <Container className="section section-lg">
+      <div className="d-flex p-4">
+        <h1 className="display-3">Education</h1>
+      </div>
+      {educationInfo.map((edu, index) => (
+        <Row className="row-grid align-items-center mb-5" key={index}>
+          <Col lg="6">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <polygon className="fill-white" points="2560 0 2560 100 0 100" />
-            </svg>
-          </div>
-        </section>
-      </Fade>
-    )
+              <h4 className="mb-0">{edu.schoolName}</h4>
+              <p>{edu.subHeader}</p>
+              <p>{edu.duration}</p>
+              {edu.desc && <p className="text-muted">{edu.desc}</p>}
+              {edu.descBullets && (
+                <ul>
+                  {edu.descBullets.map((desc, i) => (
+                    <li key={i}>{desc}</li>
+                  ))}
+                </ul>
+              )}
+            </motion.div>
+          </Col>
+        </Row>
+      ))}
+    </Container>
   );
 };
 

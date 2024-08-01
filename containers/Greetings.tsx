@@ -1,35 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { greetings } from "../portfolio";
 import { Button, Container, Row, Col } from "reactstrap";
-import GreetingLottie from "../components/DisplayLottie";
 import SocialLinks from "../components/SocialLinks";
+import Image from 'next/image'; // Import Image component from Next.js
+import headShot from "../public/src/headshot.png";
+import { Typewriter } from 'react-simple-typewriter';
 
 const Greetings = () => {
+  const [showCursor, setShowCursor] = useState(false);
+
   useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement!.scrollTop = 0;
-  });
+  }, []);
 
   return (
     <main>
       <div className="position-relative">
         <section className="section section-lg section-shaped pb-250">
           <div className="shape shape-style-1 bg-gradient-info">
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
-            <span />
+            {/* Gradient Background */}
           </div>
           <Container className="py-lg-md d-flex">
             <div className="col px-0">
-              <Row>
+              <Row className="align-items-center"> {/* Align items center */}
                 <Col lg="6">
-                  <h1 className="display-3 text-white">{greetings.title + " "}</h1>
+                  <h1 className="display-3 text-white">
+                    <div className="typewriter-text">
+                      <Typewriter
+                        words={['Aradhia Bhagat', 'UW-Madison Student', 'Software Engineer']}
+                        loop={1}  // Loop set to 1 to ensure it runs once
+                        cursor={showCursor}
+                        cursorStyle='_'
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                        onLoopDone={() => setShowCursor(false)} // Hide cursor when typing is done
+                      />
+                    </div>
+                  </h1>
                   <p className="lead text-white">{greetings.description}</p>
                   <SocialLinks />
                   {greetings.resumeLink && (
@@ -39,16 +48,20 @@ const Greetings = () => {
                         color="default"
                         href={greetings.resumeLink}
                       >
-                        <span className="btn-inner--icon mr-1">
-                          <i className="fa fa-file" />
-                        </span>
+                        <span className="btn-inner--icon mr-1">📄</span>
                         <span className="btn-inner--text">See My Resume</span>
                       </Button>
                     </div>
                   )}
                 </Col>
-                <Col lg="6">
-                  <GreetingLottie animationPath="/lottie/coding.json" />
+                <Col lg="6" className="image-container">
+                  <Image
+                    src={headShot}
+                    alt="Your Description"
+                    width={250} // Increase the size of the image
+                    height={250} // Increase the size of the image
+                    className="rounded-circle"
+                  />
                 </Col>
               </Row>
             </div>
@@ -67,7 +80,6 @@ const Greetings = () => {
             </svg>
           </div>
         </section>
-        {/* 1st Hero Variation */}
       </div>
     </main>
   );
