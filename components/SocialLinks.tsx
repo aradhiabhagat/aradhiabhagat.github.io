@@ -92,7 +92,7 @@ const SocialLinks = () => {
       <Button
         className="btn-icon-rectangle social-button" // Update class here
         color="white"
-        href="../AB.pdf" // Update this to the correct path of your resume
+        href="../public/AB.pdf" // Update this to the correct path of your resume
         target="_blank"
         rel="noopener noreferrer"
       >
