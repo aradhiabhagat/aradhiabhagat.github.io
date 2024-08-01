@@ -10,13 +10,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "lint": "eslint *.{js,jsx,ts,tsx}",
     "lint:fix": "eslint *.{js,jsx,ts,tsx} --fix",
     "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "predeploy": "npm run build && npm run export",
-    "deploy": "gh-pages -d out"
+    "prettier:fix": "prettier --write ."
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
