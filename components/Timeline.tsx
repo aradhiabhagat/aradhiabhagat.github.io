@@ -1,6 +1,6 @@
 import React from "react";
-import { educationDeets as educationInfo, experienceInfo } from "../portfolio";
-import { Education, Experience } from "../types/Portfolio";
+import { educationDeets as educationInfo, experience } from "../portfolio";
+import { EducationType, ExperienceType } from "../types/sections";
 import { Container, Row } from "reactstrap";
 import { motion } from "framer-motion";
 
@@ -24,10 +24,10 @@ const Timeline: React.FC = () => {
             </div>
           </div>
           <Row className="row-grid align-items-center mb-5">
-            {educationInfo.map((edu: Education, index: number) => (
+            {educationInfo.map((edu: EducationType, index: number) => (
               <div key={index} className="timeline-item">
                 <div className="timeline-date">
-                  📅 {edu.date} {/* Add the calendar emoji here */}
+                  📅 {edu.date}
                 </div>
                 <div className="timeline-content">
                   <h3>{edu.schoolName}</h3>
@@ -52,10 +52,10 @@ const Timeline: React.FC = () => {
             </div>
           </div>
           <Row className="row-grid align-items-center mb-5">
-            {experienceInfo.map((exp: Experience, index: number) => (
+            {experience.map((exp: ExperienceType, index: number) => (
               <div key={index} className="timeline-item">
                 <div className="timeline-date">
-                  📅 {exp.date} {/* Add the calendar emoji here */}
+                  📅 {exp.date}
                 </div>
                 <div className="timeline-content">
                   <h3>{exp.title}</h3>

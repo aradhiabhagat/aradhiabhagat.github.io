@@ -1,9 +1,8 @@
 import React from "react";
-import { Card, CardBody, Badge } from "reactstrap";
+import { Card, CardBody } from "reactstrap";
 import { EducationType } from "../types/sections";
-import Fade from "react-reveal/Fade";
 
-const EducationCard = ({ schoolName, subHeader, duration, desc, grade, descBullets }: EducationType) => {
+const EducationCard: React.FC<EducationType> = ({ schoolName, subHeader, date: string, desc, grade, descBullets }) => {
   return (
     <Card className="shadow-lg--hover shadow mt-4">
       <CardBody>
@@ -11,22 +10,15 @@ const EducationCard = ({ schoolName, subHeader, duration, desc, grade, descBulle
           <div className="pl-4">
             <h5 className="text-info">{schoolName}</h5>
             <h6>{subHeader}</h6>
-            <Badge color="info" className="mr-1">
-              {duration}
-            </Badge>
-            {grade && (
-              <Badge color="primary" className="mr-1">
-                {grade}
-              </Badge>
-            )}
-            <p className="description mt-3">{desc}</p>
-            <ul>
-              {descBullets
-                ? descBullets.map(desc => {
-                    return <li key={desc}>{desc}</li>;
-                  })
-                : null}
-            </ul>
+            <p>{desc}</p>
+            {grade && <p>Grade: {grade}</p>}
+            {descBullets ? (
+              <ul>
+                {descBullets.map((desc, index) => (
+                  <li key={index}>{desc}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
       </CardBody>

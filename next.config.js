@@ -1,7 +1,13 @@
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
-    domains: ["avatars.githubusercontent.com"],
+    domains: ['avatars.githubusercontent.com'],
   },
-  output: "standalone",
+  output: 'standalone',
+  assetPrefix: isProd ? '/aradhiabhagat.github.io/' : '',
+  basePath: isProd ? '/aradhiabhagat.github.io' : '',
+  trailingSlash: true,
 };
+

@@ -22843,11 +22843,11 @@ td.rdtYear:hover {
 
 .timeline-date {
 	background: #fff;
-	padding: 5px 10px;
+	padding: 30px 20px;
 	font-size: 0.8rem; /* Adjusted from 0.8rem */
 	text-align: center;
 	position: absolute;
-	left: 2px;
+	left: -10px;
 	top: 10px;
 }
 
@@ -24466,6 +24466,49 @@ td.rdtYear:hover {
 	height: 100%;
 }
 
+.timeline {
+	position: relative;
+	padding: 20px 0;
+	margin-top: 30px;
+}
+
+.timeline-item {
+	position: relative;
+	padding: 20px 0;
+	margin-left: 80px; /* Adjust as needed to provide more space */
+}
+
+.timeline-date {
+	background: #fff;
+	padding: 10px 15px;
+	font-size: 1.0rem;
+	text-align: center;
+	position: absolute;
+	left: -70px; /* Adjusted for better alignment */
+	top: 10px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 1; /* Ensure it is above other elements */
+}
+
+.timeline-content {
+	background: #fff;
+	padding: 15px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+	margin-left: 50px; /* Adjusted to prevent overlapping */
+}
+
+.timeline-content h3,
+.timeline-content h4 {
+	margin: 0;
+}
+
+.timeline-content ul {
+	padding-left: 20px;
+	margin-top: 10px;
+}
 
 
 

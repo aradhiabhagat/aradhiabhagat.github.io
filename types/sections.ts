@@ -20,7 +20,11 @@ export type GreetingsType = {
   title: string;
   description?: string;
   resumeLink?: string;
+  styles?: {
+    fontFamily: string;
+  };
 };
+
 
 // * SKILLS SECTION
 
@@ -39,8 +43,17 @@ type SkillType = {
 export type SkillsSectionType = {
   title: string;
   subTitle: string;
-  data: SkillType[];
+  data: {
+    title: string;
+    lottieAnimationFile: string;
+    skills: (string | React.ReactNode)[];
+    softwareSkills: {
+      skillName: string;
+      iconifyTag: string;
+    }[];
+  }[];
 };
+
 
 // * PROFICIENCY SECTION
 
@@ -51,25 +64,28 @@ export type SkillBarsType = {
 
 // * EDUCATION SECTION
 
-export type EducationType = {
+export interface EducationType {
   schoolName: string;
   subHeader: string;
-  duration: string;
-  desc: string;
+  desc?: string;
   grade?: string;
   descBullets?: string[];
-};
+  degree?: string;
+  coursework?: string[];
+  activities?: string[];
+  date?: string;
+}
 
-// * EXPERIENCE SECTION
-
-export type ExperienceType = {
-  role: string;
+export interface ExperienceType {
   company: string;
-  companyLogo: string;
   date: string;
-  desc: string;
+  title?: string;
+  description?: string;
+  companyLogo? : string;
+  role?: string;
+  desc?: string;
   descBullets?: string[];
-};
+}
 
 // * PROJECT SECTION
 
@@ -82,8 +98,4 @@ export type ProjectType = {
 
 // * FEEDBACK SECTION
 
-export type FeedbackType = {
-  name: string;
-  role: string;
-  feedback: string;
-};
+

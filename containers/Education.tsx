@@ -1,5 +1,5 @@
 import React from "react";
-import { educationInfo } from "../portfolio";
+import { educationDeets } from "../portfolio";
 import { Container, Row, Col } from "reactstrap";
 import { motion } from "framer-motion";
 
@@ -9,7 +9,7 @@ const Education = () => {
       <div className="d-flex p-4">
         <h1 className="display-3">Education</h1>
       </div>
-      {educationInfo.map((edu, index) => (
+      {educationDeets.map((edu, index) => (
         <Row className="row-grid align-items-center mb-5" key={index}>
           <Col lg="6">
             <motion.div
@@ -19,7 +19,7 @@ const Education = () => {
             >
               <h4 className="mb-0">{edu.schoolName}</h4>
               <p>{edu.subHeader}</p>
-              <p>{edu.duration}</p>
+              <p>{edu.date}</p>
               {edu.desc && <p className="text-muted">{edu.desc}</p>}
               {edu.descBullets && (
                 <ul>

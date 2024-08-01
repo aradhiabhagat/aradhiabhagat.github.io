@@ -2,10 +2,8 @@ import emoji from "react-easy-emoji";
 import {
   EducationType,
   ExperienceType,
-  FeedbackType,
   ProjectType,
   SkillsSectionType,
-  SkillBarsType,
   SEODataType,
   SocialLinksType,
   GreetingsType,
@@ -15,7 +13,7 @@ export const greetings: GreetingsType = {
   name: "Aradhia Bhagat",
   title: "Aradhia Bhagat",
   description:
-    "I'm a rising junior at UW Madison pursuing a Bachelors of Science in Computer and Data Science, with a certificate in Digital Studies. I have 3+ years of project experience in various areas, ranging from full-stack development to machine learning development. I am undegraduate researcher at Informatics Skunkworks, working on LLM based projects.",
+    "I'm a rising junior at UW Madison pursuing a Bachelors of Science in Computer and Data Science, with a certificate in Digital Studies. I have 3+ years of project experience in various areas, ranging from full-stack development to machine learning development. I am undergraduate researcher at Informatics Skunkworks, working on LLM based projects.",
   styles: {
     fontFamily: "'Merriweather', serif",
   },
@@ -33,24 +31,53 @@ export const socialLinks: SocialLinksType = {
   github: "https://github.com/aradhiabhagat",
 };
 
-export const educationInfo: EducationType[] = [
+export const educationDeets: EducationType[] = [
   {
     schoolName: "University of Wisconsin-Madison",
     subHeader: "Bachelor of Science in Computer Science and Data Science",
-    duration: "May 2022 - May 2026",
-    desc: "",
-    descBullets: [], // Array of Strings
+    date: "May 2022 - May 2026",
+    degree: "Bachelors of Science",
+    coursework: [
+      "Advanced Algorithms",
+      "Data Structure",
+      "Machine Organisation Using C",
+      "Artificial Intelligence",
+      "Java/Python Programming",
+      "OOP",
+      "Data Science Modeling",
+      "Discrete Mathematics",
+      "Linear Algebra",
+    ],
+    activities: [
+      "ISA (Indian Student Association) Board Member",
+      "WACM",
+      "Girls Who Code - Madison",
+    ],
+  },
+  {
+    schoolName: "DPS International",
+    subHeader: "High School (IB) Diploma",
+    date: "2022",
   },
 ];
+
 export const skillsSection: SkillsSectionType = {
+  title: "My SkillSet",
+  subTitle: "",
   data: [
     {
-      title: "My SkillSet",
-      lottieAnimationFile: "/lottie/skills/fullstack.json", // Path of Lottie Animation JSON File
+      title: "Full Stack Development",
+      lottieAnimationFile: "/lottie/skills/fullstack.json",
       skills: [
-        emoji("⚡ Developing dynamic and interactive web applications using React.js, Vue.js, and Next.js"),
-        emoji("⚡ Creating and maintaining robust backend systems with Django and Django REST Framework"),
-        emoji("⚡ Deploying and managing scalable cloud infrastructure with AWS and Docker"),
+        emoji(
+          "⚡ Developing dynamic and interactive web applications using React.js, Vue.js, and Next.js"
+        ),
+        emoji(
+          "⚡ Creating and maintaining robust backend systems with Django and Django REST Framework"
+        ),
+        emoji(
+          "⚡ Deploying and managing scalable cloud infrastructure with AWS and Docker"
+        ),
       ],
       softwareSkills: [
         {
@@ -122,39 +149,21 @@ export const skillsSection: SkillsSectionType = {
   ],
 };
 
-
 export const experience: ExperienceType[] = [
   {
-    role: "Software Developer",
     company: "TRAD DoIT Academic Technology",
-    companyLogo: "/img/icons/common/meganos.png",
     date: "May 2024 - Present",
-    desc: "I crafted backends for diverse web apps, APIs, and WebSockets in e-commerce, podcasts, and property management. Managed server upkeep, deployments on Linux, Heroku, and AWS S3. Implemented PyTest for automated unit and integration testing, slashing 4 hours of manual testing each sprint, fortifying a dependable and flawless code foundation.",
+    description: "I crafted backends for diverse web apps, APIs, and WebSockets in e-commerce, podcasts, and property management. Managed server upkeep, deployments on Linux, Heroku, and AWS S3. Implemented PyTest for automated unit and integration testing, slashing 4 hours of manual testing each sprint, fortifying a dependable and flawless code foundation.",
   },
   {
-    role: "Undegraduate Researcher",
     company: "Informatics Skunkworks",
-    companyLogo: "/img/icons/common/duseca_software_logo.jpeg",
     date: "August 2023 - Present",
-    desc: "Crafted robust mobile application backends employing Django, Python, and REST APIs. Leveraged Django REST Framework, PostgreSQL, AWS, Firebase, Stripe, and WebSocket for efficient development. Collaborated across teams to surpass client expectations. Designed intuitive UIs, empowering clients to effortlessly manage their applications with a visually captivating interface.",
-    // descBullets: [
-    // 	"Lorem ipsum dolor sit amet, consdfgectetur adipiscing elit",
-    // 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    // ],
+    description: "Crafted robust mobile application backends employing Django, Python, and REST APIs. Leveraged Django REST Framework, PostgreSQL, AWS, Firebase, Stripe, and WebSocket for efficient development. Collaborated across teams to surpass client expectations. Designed intuitive UIs, empowering clients to effortlessly manage their applications with a visually captivating interface.",
   },
   {
-    role: "Machine Learning Intern",
     company: "Siemens Energy",
-    companyLogo: "/img/icons/common/zrtech.jpeg",
     date: "Aug 2022 - Jun 2023",
-    desc: "Crafting diverse web applications, I've elevated functionality and user engagement. Spearheaded Visual Portfolio, leveraging AI for captivating presentations from parsed text. Proficiently set up and optimized applications on Linux servers, guaranteeing smooth scalability and top-notch performance for seamless user experiences.",
-  },
-  {
-    role: "Backend Developer",
-    company: "Bleed-AI",
-    companyLogo: "/img/icons/common/bleedAI.jpg",
-    date: "Sept 2021 - Oct 2021",
-    desc: "As a Django developer at Bleed AI, I integrated a computer vision AI model to process YouTube URLs on a website. I used Django Channels and Websockets to show real-time processing and implemented threading to run multiple instances of the AI model. I also used jQuery for UI rendering and deployed the website on a Heroku server.",
+    description: "Crafting diverse web applications, I've elevated functionality and user engagement. Spearheaded Visual Portfolio, leveraging AI for captivating presentations from parsed text. Proficiently set up and optimized applications on Linux servers, guaranteeing smooth scalability and top-notch performance for seamless user experiences.",
   },
 ];
 
@@ -176,60 +185,6 @@ export const projects: ProjectType[] = [
   },
 ];
 
-
-export const educationDeets: EducationType[] = [
-  {
-    date: "2022-2026",
-    schoolName: "University of Wisconsin-Madison",
-    degree: "Bachelors of Science in Computer Science and Data Science",
-    coursework: [
-      "Advanced Algorithms",
-      "Data Structure",
-      "Machine Organisation Using C",
-      "Artificial Intelligence",
-      "Java/Python Programming",
-      "OOP",
-      "Data Science Modeling",
-      "Discrete Mathematics",
-      "Linear Algebra"
-    ],
-    activities: [
-      "ISA (Indian Student Association) Board Member",
-      "WACM",
-      "Girls Who Code - Madison"
-    ]
-  },
-  {
-    date: "2022",
-    schoolName: "DPS International",
-    degree: "High School (IB) Diploma"
-  }
-];
-
-export const experienceInfo: ExperienceType[] = [
-  {
-    date: "Present",
-    position: "Software Developer",
-    company: "TRAD-Software Developer",
-    description: "I have collaborated with over 15 cross-industry clients, utilizing Figma to plan, estimate, and propose designs for web development projects. My experience includes developing multiple online learning tools for UW Health via the Cornerstone API, using Vue.js, SlimPHP, and MAMP to create dynamic and responsive user interfaces. Additionally, I contributed to the UW Madison GPA Calculator by redesigning the interface and enhancing the functionality with a 'Raise GPA' feature."
-  },
-  {
-    date: "Present",
-    position: "CS 300 Peer Mentor",
-    company: "Informatics Skunkworks - Undergraduate Researcher",
-    description: "I have implemented NLP algorithms to develop projects such as Automated Essay Feedback and the extraction of scientific data from large language models. Leading efforts to optimize project workflows, I achieved a notable 10.5% improvement in model efficiency. Additionally, I created a neural network visualizer using TensorFlow and HuggingFace to illustrate the workings of activation functions."
-  },
-  {
-    date: "2022",
-    position: "Undergraduate Research Assistant",
-    company: "Siemens Energy - Machine Learning Intern",
-    description: "I developed a neural network to forecast the efficiency of sensors in a power plant using Python libraries such as Keras, Pandas, TensorFlow, NumPy, and Scikit-learn. By incorporating L1 and L2 regularizers and dropout layers, I significantly improved the ANN's validation accuracy by 21%, achieving a final accuracy of 99.55%."
-  }
-];
-
-
-
-// See object prototype on /types/section.ts page
 export const seoData: SEODataType = {
   title: "Aradhia Bhagat",
   description: greetings.description,
@@ -242,7 +197,7 @@ export const seoData: SEODataType = {
     "@aradhiabhagat",
     "aradhiabhagat",
     "Portfolio",
-    "Aradhia Portfolio ",
+    "Aradhia Portfolio",
     "Aradhia Bhagat Portfolio",
   ],
 };
